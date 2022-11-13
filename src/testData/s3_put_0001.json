@@ -1,0 +1,28 @@
+{
+    "version": "0",
+    "id": "cfaaa11e-e8f2-b5ad-4a95-87d95e2c317c",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "416904185688",
+    "time": "2021-12-29T13:25:25Z",
+    "region": "us-east-1",
+    "resources": [
+        "arn:aws:s3:::epsilon-development-media"
+    ],
+    "detail": {
+        "version": "0",
+        "bucket": {
+            "name": "epsilon-development-media"
+        },
+        "object": {
+            "key": "A0BB3035-96FE-4D2B-A53B-F0426CC46393.jpeg",
+            "size": 3708061,
+            "etag": "e670824fd0f135ac83ef331678e88c31",
+            "sequencer": "0061CC61C515826333"
+        },
+        "request-id": "XJ9EPED04A4Y4H38",
+        "requester": "416904185688",
+        "source-ip-address": "76.69.25.143",
+        "reason": "PutObject"
+    }
+}

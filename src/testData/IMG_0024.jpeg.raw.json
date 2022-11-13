@@ -1,0 +1,64 @@
+{
+  "Make": "Apple",
+  "Model": "iPhone 4",
+  "Orientation": "Rotate 90 CW",
+  "XResolution": 72,
+  "YResolution": 72,
+  "ResolutionUnit": "inches",
+  "Software": "5.0",
+  "ModifyDate": "2011-10-21T20:40:51.000Z",
+  "YCbCrPositioning": 1,
+  "ExposureTime": 0.06666666666666667,
+  "FNumber": 2.8,
+  "ExposureProgram": "Normal program",
+  "ISO": 320,
+  "ExifVersion": "2.2.1",
+  "DateTimeOriginal": "2011-10-21T20:40:51.000Z",
+  "CreateDate": "2011-10-21T20:40:51.000Z",
+  "ComponentsConfiguration": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 0
+  },
+  "ShutterSpeedValue": 3.9112,
+  "ApertureValue": 2.970853573907009,
+  "BrightnessValue": 0.54049135577798,
+  "MeteringMode": "Pattern",
+  "Flash": "Flash did not fire, auto mode",
+  "FocalLength": 3.85,
+  "SubjectArea": {
+    "0": 1295,
+    "1": 967,
+    "2": 699,
+    "3": 696
+  },
+  "FlashpixVersion": "1.0",
+  "ColorSpace": 1,
+  "ExifImageWidth": 2592,
+  "ExifImageHeight": 1936,
+  "SensingMethod": "One-chip color area sensor",
+  "ExposureMode": "Auto",
+  "WhiteBalance": "Auto",
+  "SceneCaptureType": "Standard",
+  "Sharpness": "High",
+  "GPSLatitudeRef": "N",
+  "GPSLatitude": [
+    43,
+    49.96,
+    0
+  ],
+  "GPSLongitudeRef": "W",
+  "GPSLongitude": [
+    79,
+    32.4,
+    0
+  ],
+  "GPSAltitudeRef": {
+    "0": 0
+  },
+  "GPSAltitude": 224.80597014925374,
+  "GPSTimeStamp": "20:40:4837",
+  "latitude": 43.83266666666667,
+  "longitude": -79.54
+}
