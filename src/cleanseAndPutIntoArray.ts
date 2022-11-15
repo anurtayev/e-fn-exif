@@ -1,22 +1,14 @@
-import { AttributeValue, InputType } from "@aspan/sigma";
+import { Tag } from "@aspan/sigma";
 
 export default (
   exifData: {
-    [key: string]: string | number;
+    [key: string]: string | null | undefined;
   } = {}
-): Array<AttributeValue> => {
+): Array<Tag> => {
   if (Reflect.ownKeys(exifData).length === 0) return;
 
-  return Reflect.ownKeys(exifData)
-    .filter((key) => Boolean(exifData[key as string]))
-    .map((key) => ({
-      attribute: {
-        name: key as string,
-        type:
-          typeof exifData[key as string] === "string"
-            ? InputType.String
-            : InputType.Number,
-      },
-      value: String(exifData[key as string]),
-    }));
+  return Reflect.ownKeys(exifData).map((key) => ({
+    name: (key as string).toLowerCase(),
+    value: exifData[key as string] ? String(exifData[key as string]) : null,
+  }));
 };

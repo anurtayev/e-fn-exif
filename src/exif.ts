@@ -2,16 +2,20 @@ import { error, info } from "console";
 import { EventBridgeHandler } from "aws-lambda";
 import exifr from "exifr";
 
-import {
-  isKeyExtensionAllowed,
-  getExtension,
-  s3,
-  documentClient,
-} from "@aspan/sigma";
+import { isKeyExtensionAllowed, getExtension } from "./util";
 
 import extractMetaFromKey from "./extractMetaFromKey";
 import exifrTransform from "./exifrTransform";
 import cleanseAndPutIntoArray from "./cleanseAndPutIntoArray";
+
+import S3 from "aws-sdk/clients/s3";
+import { DocumentClient } from "aws-sdk/clients/dynamodb";
+
+const s3 = new S3({
+  apiVersion: "2006-03-01",
+});
+
+const documentClient = new DocumentClient({ apiVersion: "2012-08-10" });
 
 export const handler: EventBridgeHandler<
   "Object Created",
@@ -51,10 +55,10 @@ export const handler: EventBridgeHandler<
 
   const meta = {
     id: key,
-    attributes: cleanseAndPutIntoArray({
+    tags: cleanseAndPutIntoArray({
       ...extractMetaFromKey(key),
       ...exifMeta,
-      size,
+      size: String(size),
       extension,
     }),
   };

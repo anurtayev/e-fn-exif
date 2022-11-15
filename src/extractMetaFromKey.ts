@@ -5,7 +5,7 @@ export default (
   key: string | undefined | null
 ):
   | undefined
-  | { dateCreated: string; yearCreated: number; monthCreated: number } => {
+  | { dateCreated: string; yearCreated: string; monthCreated: string } => {
   if (!key) return;
   if (!key.startsWith(MEDIA_PREFIX)) return;
 
@@ -31,7 +31,7 @@ export default (
 
   return {
     dateCreated: dateCreatedBin.toISOString(),
-    yearCreated: dateCreatedBin.getFullYear(),
-    monthCreated: dateCreatedBin.getMonth() + 1,
+    yearCreated: String(dateCreatedBin.getFullYear()),
+    monthCreated: String(dateCreatedBin.getMonth() + 1),
   };
 };

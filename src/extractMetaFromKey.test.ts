@@ -26,8 +26,8 @@ describe("extractMetaFromKey", () => {
       extractMetaFromKey("media/20000710. Atyrau visit/Aktau_beach.jpg")
     ).toEqual({
       dateCreated: new Date(2000, 7 - 1, 10).toISOString(),
-      monthCreated: 7,
-      yearCreated: 2000,
+      monthCreated: "7",
+      yearCreated: "2000",
     });
   });
 
@@ -36,8 +36,8 @@ describe("extractMetaFromKey", () => {
       extractMetaFromKey("media/20151110. Atyrau visit/Aktau_beach.jpg")
     ).toEqual({
       dateCreated: new Date(2015, 11 - 1, 10).toISOString(),
-      monthCreated: 11,
-      yearCreated: 2015,
+      monthCreated: "11",
+      yearCreated: "2015",
     });
   });
 

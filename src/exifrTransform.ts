@@ -1,6 +1,6 @@
 export default function (
-  exifrData: ExifrRawData
-): undefined | { [key: string]: string | number } {
+  exifrData: ExifrRawData | undefined | null
+): undefined | { [key: string]: string } {
   if (!exifrData || Reflect.ownKeys(exifrData).length === 0) return;
 
   const {
@@ -20,18 +20,18 @@ export default function (
     ...(make ? { make } : {}),
     ...(model ? { model } : {}),
     ...(orientation ? { orientation } : {}),
-    ...(width ? { width } : {}),
-    ...(height ? { height } : {}),
-    ...(latitude ? { latitude } : {}),
-    ...(longitude ? { longitude } : {}),
+    ...(width ? { width: String(width) } : {}),
+    ...(height ? { height: String(height) } : {}),
+    ...(latitude ? { latitude: String(latitude) } : {}),
+    ...(longitude ? { longitude: String(longitude) } : {}),
     ...(dateCreated
       ? { dateCreated: dateCreated && dateCreated.toISOString() }
       : {}),
     ...(dateCreated
-      ? { monthCreated: dateCreated && dateCreated.getMonth() + 1 }
+      ? { monthCreated: dateCreated && String(dateCreated.getMonth() + 1) }
       : {}),
     ...(dateCreated
-      ? { yearCreated: dateCreated && dateCreated.getFullYear() }
+      ? { yearCreated: dateCreated && String(dateCreated.getFullYear()) }
       : {}),
   };
 }
@@ -72,7 +72,7 @@ type ExifrRawData = {
   WhiteBalance?: string;
   FocalLengthIn35mmFormat?: number;
   SceneCaptureType?: string;
-  LensInfo?: Array<number>;
+  LensInfo?: Array<number | null>;
   LensMake?: string;
   LensModel?: string;
   CompositeImage?: string;
